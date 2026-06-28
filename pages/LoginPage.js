@@ -13,6 +13,8 @@ class loginPage{
         this.passwordInput= this.page.locator("input[name='password']");
         this.loginButton = page.locator("input[value='Log In']");
         this.logoutLink = this.page.locator("text=Log Out");
+       
+        this.totalAmount =this.page.locator("//td[normalize-space()='Total']/following-sibling::td/b");
 
     }
 
@@ -27,7 +29,17 @@ class loginPage{
       await expect(this.logoutLink).toBeVisible();
     //  await expect(this.page).toHaveURL(/overview\.htm/);
 }
+      
+     async printAvailableBalance(){ 
 
+    const balance = await this.totalAmount.textContent();
+     //expect(balance).not.toBeNull();
+
+    console.log("Total Balance :", balance);
+
+    return balance;
+}
+     
 
 
 

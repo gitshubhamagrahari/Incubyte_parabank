@@ -32,8 +32,8 @@ class TestData {
 
    static getLoginUser() {
         return {
-            username: "test1",
-            password: "test1"
+            username: "test2",
+            password: "test2"
         };
     }
 

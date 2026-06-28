@@ -1,7 +1,7 @@
   const {Given, When, Then} = require("@cucumber/cucumber");
   const HomePage = require("../../pages/HomePage");
   const  LoginPage = require("../../pages/LoginPage");
-  const TestDate = require("../../utils/TestData");
+  const TestData = require("../../utils/TestData");
 
 
 
@@ -14,7 +14,7 @@
 
 When("User logs in with registered credentials", async function(){
 
-    const user =TestDate.getLoginUser();
+    const user =TestData.getLoginUser();
     this.loginPage  =new LoginPage(this.page);
 
     await this.loginPage.login(
@@ -24,7 +24,12 @@ When("User logs in with registered credentials", async function(){
       
 })
 
-Then("User should be logged in successfully", async function(){
+Then("User should be logged in successfully", async function () {
 
-await this.loginPage.isLoginSuccessful();
-})
+    await this.loginPage.isLoginSuccessful();
+
+    const balance = await this.loginPage.printAvailableBalance();
+
+  
+
+});
