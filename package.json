@@ -1,0 +1,24 @@
+{
+  "name": "incubyteassignment",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+"scripts": {
+  "test": "cucumber-js",
+  "test:register": "cucumber-js features/register.feature",
+  "test:login": "cucumber-js features/login.feature",
+  "test:headed": "cross-env HEADLESS=false cucumber-js"
+},
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@cucumber/cucumber": "^13.0.0",
+    "@playwright/test": "^1.61.1"
+  },
+  "dependencies": {
+    "cross-env": "^10.1.0",
+    "dotenv": "^17.4.2",
+    "uuid": "^14.0.1"
+  }
+}
